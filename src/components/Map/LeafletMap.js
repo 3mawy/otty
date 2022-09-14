@@ -18,7 +18,7 @@ const Map = () => {
         }, []);
 
         return position === null ? null : (
-            <Marker position={position} >
+            <Marker position={position}  >
                 <Popup>You are here</Popup>
             </Marker>
         );
