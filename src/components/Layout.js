@@ -10,15 +10,9 @@ const Layout = ({children}) => {
 
     return (
         <ThemeProvider>
-            <div className={'dark:bg-dark400 duration-500 relative font-poppins rtl:font-vazirmatn dark:text-light'}>
-                <div className={`sticky z-50 `}>
-                    {/*<Header/>*/}
-                </div>
-                <div className={`mb-auto min-h-[76.73vh] relative`}>
+            <div className={'dark:bg-dark400  duration-500 relative font-poppins rtl:font-vazirmatn dark:text-light relative'}>
                     <ButtonsOverlay/>
-             
-
-
+                <div className={`mb-auto  relative`}>
                     {children}
                 </div>
                 {/*<Footer/>*/}
