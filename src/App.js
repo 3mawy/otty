@@ -3,16 +3,14 @@ import './App.css';
 import {Route, BrowserRouter as Router, Routes} from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
+import Map from "./components/Map/Map";
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Layout>
-          <Routes>
-              <Route exact path="/" element={<Home/>}/>
-
-          </Routes>
+          <Map/>
         </Layout>
       </Router>
     </div>
