@@ -13,6 +13,7 @@ const Map = () => {
 
     return (
         <div>
+            <LeafletMap/>
         </div>
 
     );

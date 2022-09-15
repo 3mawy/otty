@@ -26,6 +26,7 @@ const Map = () => {
 
     return (
         <MapContainer
+            enableHighAccuracy={true}
             center={[30.0471,  31.4236]}
             zoom={13}
             scrollWheelZoom
