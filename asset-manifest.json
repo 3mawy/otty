@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/2otty/static/css/main.81082260.css",
-    "main.js": "/2otty/static/js/main.dda96c3e.js",
+    "main.js": "/2otty/static/js/main.787a45e6.js",
     "static/js/787.b37fa77b.chunk.js": "/2otty/static/js/787.b37fa77b.chunk.js",
     "static/media/logo.svg": "/2otty/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "static/media/position-gps-svgrepo-com.svg": "/2otty/static/media/position-gps-svgrepo-com.7e25bded07b47183a02f054795131e8e.svg",
     "static/media/position-gps-svgrepo-com-red.svg": "/2otty/static/media/position-gps-svgrepo-com-red.2e9a740d71bd53c67d5d19ac8ad5bf1b.svg",
     "index.html": "/2otty/index.html",
     "main.81082260.css.map": "/2otty/static/css/main.81082260.css.map",
-    "main.dda96c3e.js.map": "/2otty/static/js/main.dda96c3e.js.map",
+    "main.787a45e6.js.map": "/2otty/static/js/main.787a45e6.js.map",
     "787.b37fa77b.chunk.js.map": "/2otty/static/js/787.b37fa77b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.81082260.css",
-    "static/js/main.dda96c3e.js"
+    "static/js/main.787a45e6.js"
   ]
 }
