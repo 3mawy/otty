@@ -4,6 +4,7 @@ import {GiCat, GiMicrophone, GiWolfHowl} from "react-icons/gi";
 
 import {AiOutlineNotification} from "react-icons/ai";
 import ReactCamera from "./Camera/ReactCamera";
+import Html5Camera from "./Camera/html5Cam/Html5Camera";
 
 const ButtonsOverlay = () => {
 
@@ -18,7 +19,6 @@ const ButtonsOverlay = () => {
                     <AiOutlineNotification className={`w-9 h-9 `}/>
                 </button>
             </div>
-                <ReactCamera/>
         </div>
     );
 };
