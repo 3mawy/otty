@@ -30,15 +30,17 @@ export { myLocation, lostCatLocationIcon };
 
 const Map = () => {
     // visitor geoLocalisation on the Map
+    const [position, setPosition] = useState(null);
+
     function LocationMarker() {
-        const [position, setPosition] = useState(null);
 
         const map = useMap();
 
         useEffect(() => {
             map.locate().on("locationfound", function (e) {
                 setPosition(e.latlng);
-                map.flyTo(e.latlng, map.getZoom());
+                map.setView(e.latlng)
+                map.flyTo(e.latlng, 14.7);
             });
         }, []);
 
@@ -60,7 +62,7 @@ const Map = () => {
     return (
         <MapContainer
             center={[30.0471,  31.4236]}
-            zoom={13}
+            zoom={14}
             scrollWheelZoom
             style={{ height: "100vh" }}
         >
