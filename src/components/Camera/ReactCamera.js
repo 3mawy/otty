@@ -4,6 +4,7 @@ import Webcam from "react-webcam";
 import {CgClose} from "react-icons/cg";
 import ReactImagePreview from "./ReactImagePreview";
 import {useNavigate} from 'react-router-dom';
+import AddPostForm from "../../pages/AddPostForm";
 
 const ReactCamera = () => {
     const webcamRef = useRef(null);
@@ -22,7 +23,7 @@ const ReactCamera = () => {
     return (
 
         <div>
-            {imgSrc ? (<ReactImagePreview imgSrc={imgSrc} onRetake={() => setImgSrc(null)}/>) : (
+            {imgSrc ? (<AddPostForm><ReactImagePreview imgSrc={imgSrc} onRetake={() => setImgSrc(null)}/></AddPostForm>) : (
                 <div className={`absolute z-50 justify-center flex`}>
                     <Webcam
                         audio={false}
