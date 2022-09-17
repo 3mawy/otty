@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import {ImCodepen} from "react-icons/im";
 import L from 'leaflet';
 import cat from "./img/position-gps-svgrepo-com.svg";
 import catred from "./img/position-gps-svgrepo-com-red.svg";
 
-const catIcon = new L.Icon({
+const lostCatLocationIcon = new L.Icon({
     iconUrl: cat,
     iconRetinaUrl: cat,
     iconAnchor: null,
@@ -16,7 +15,7 @@ const catIcon = new L.Icon({
     shadowAnchor: null,
     iconSize: new L.Point(75, 75),
 });
-const locationIcon = new L.Icon({
+const myLocation = new L.Icon({
     iconUrl: catred,
     iconRetinaUrl: catred,
     iconAnchor: null,
@@ -27,7 +26,7 @@ const locationIcon = new L.Icon({
     iconSize: new L.Point(75, 75),
 });
 
-export { catIcon, locationIcon };
+export { myLocation, lostCatLocationIcon };
 
 const Map = () => {
     // visitor geoLocalisation on the Map
@@ -44,7 +43,7 @@ const Map = () => {
         }, []);
 
         return position === null ? null : (
-            <Marker position={position} icon={locationIcon}>
+            <Marker position={position} icon={lostCatLocationIcon}>
                 <Popup>You are here</Popup>
             </Marker>
         );
@@ -53,7 +52,7 @@ const Map = () => {
         const [catsLocations, setCatsLocations] = useState([{position:[31.0471,  31.8236]},{position:[29.7471,  31.8236]}]);
 
         return catsLocations.map((location) =>
-            (<Marker position={location.position}  icon={catIcon} >
+            (<Marker position={location.position}  icon={myLocation} >
                 <Popup>Meow!</Popup>
             </Marker>))
     }
@@ -72,7 +71,7 @@ const Map = () => {
 
             <LocationMarker />
             <CatsLocations />
-            <img src={catIcon}/>
+            <img src={myLocation}/>
         </MapContainer>
     );
 };

@@ -1,21 +1,14 @@
-import React, {useState} from 'react';
-import { MapContainer } from 'react-leaflet/MapContainer'
-import { TileLayer } from 'react-leaflet/TileLayer'
-import {useMap, useMapEvents} from 'react-leaflet/hooks'
-import {Marker} from "react-leaflet/Marker";
-import {Popup} from "react-leaflet";
+import React from 'react';
 import LeafletMap from "./LeafletMap";
-import GoogleMap from "./GoogleMap";
 
 const Map = () => {
 
 
 
     return (
-        <div>
+        <div className={`absolute z-30 top-0 left-0 right-0 bottom-0`}>
             <LeafletMap/>
         </div>
-
     );
 };
 
