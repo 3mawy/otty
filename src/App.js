@@ -11,7 +11,7 @@ function App() {
             <Router>
                 <Layout>
                     <Routes>
-                        <Route path="/2otty/" element={<Home/>}/>
+                        <Route path="/otty/" element={<Home/>}/>
                         <Route exact path={"camera"} element={<Camera/>}/>
                     </Routes>
                 </Layout>
