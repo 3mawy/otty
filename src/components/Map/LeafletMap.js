@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import React, {useEffect, useState} from "react";
+import {MapContainer, TileLayer, Marker, Popup, useMap} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from 'leaflet';
 import cat from "./img/position-gps-svgrepo-com.svg";
@@ -26,22 +26,26 @@ const myLocation = new L.Icon({
     iconSize: new L.Point(75, 75),
 });
 
-export { myLocation, lostCatLocationIcon };
+export {myLocation, lostCatLocationIcon};
 
 const Map = () => {
     // visitor geoLocalisation on the Map
     const [position, setPosition] = useState(null);
+    const [positionLoaded, setPositionLoaded] = useState(false);
 
     function LocationMarker() {
 
         const map = useMap();
-
+        const handleOnLocationFound = (e) => {
+            setPositionLoaded(true);
+            setPosition(e.latlng);
+            map.setView(e.latlng, 15)
+        }
         useEffect(() => {
-            map.locate().on("locationfound", function (e) {
-                setPosition(e.latlng);
-                map.setView(e.latlng)
-                map.flyTo(e.latlng, 14.7);
-            });
+            if (!positionLoaded) {
+                map.locate().on("locationfound", handleOnLocationFound);
+            }
+
         }, []);
 
         return position === null ? null : (
@@ -50,29 +54,30 @@ const Map = () => {
             </Marker>
         );
     }
+
     function CatsLocations() {
-        const [catsLocations, setCatsLocations] = useState([{position:[31.0471,  31.8236]},{position:[29.7471,  31.8236]}]);
+        const [catsLocations, setCatsLocations] = useState([{position: [31.0471, 31.8236]}, {position: [29.7471, 31.8236]}]);
 
         return catsLocations.map((location) =>
-            (<Marker position={location.position}  icon={myLocation} >
+            (<Marker position={location.position} icon={myLocation}>
                 <Popup>Meow!</Popup>
             </Marker>))
     }
 
     return (
         <MapContainer
-            center={[30.0471,  31.4236]}
+            center={[30.0471, 31.4236]}
             zoom={14}
             scrollWheelZoom
-            style={{ height: "100vh" }}
+            style={{height: "100vh"}}
         >
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
 
-            <LocationMarker />
-            <CatsLocations />
+            <LocationMarker/>
+            <CatsLocations/>
             <img src={myLocation}/>
         </MapContainer>
     );
