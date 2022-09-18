@@ -12,7 +12,6 @@ function App() {
                 <Layout>
                     <Routes>
                         <Route path="/otty/" element={<Home/>}/>
-                        <Route exact path={"camera"} element={<Camera/>}/>
                     </Routes>
                 </Layout>
             </Router>

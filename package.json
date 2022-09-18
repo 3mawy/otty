@@ -1,7 +1,7 @@
 {
-  "name": "2otty",
+  "name": "otty",
   "version": "0.1.0",
-  "homepage": "https://3mawy.github.io/2otty",
+  "homepage": "https://3mawy.github.io/otty",
   "private": false,
   "dependencies": {
     "@react-google-maps/api": "^2.12.2",
