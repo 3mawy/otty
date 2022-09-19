@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useState} from "react";
-import {ThemeProvider} from "./themeContext";
+import {ThemeProvider} from "../themeContext";
 import {GiCat} from "react-icons/gi";
 import {AiOutlineNotification} from "react-icons/ai";
 import {BiCamera} from "react-icons/bi";
