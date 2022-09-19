@@ -28,7 +28,7 @@ const myLocation = new L.Icon({
 
 export {myLocation, lostCatLocationIcon};
 
-const Map = () => {
+const LeafletMap = ({posts}) => {
     // visitor geoLocalisation on the Map
     const [position, setPosition] = useState(null);
     const [positionLoaded, setPositionLoaded] = useState(false);
@@ -56,10 +56,12 @@ const Map = () => {
     }
 
     function CatsLocations() {
-        const [catsLocations, setCatsLocations] = useState([{position: [31.0471, 31.8236]}, {position: [29.7471, 31.8236]}]);
-
-        return catsLocations.map((location) =>
-            (<Marker position={location.position} icon={myLocation}>
+        const [catsPosts, setCatsPosts] = useState([]);
+        useEffect(() => {
+            setCatsPosts(posts.posts)
+        },[])
+        return catsPosts.map((post) =>
+            (<Marker position={[post.lat, post.long]} icon={myLocation}>
                 <Popup>Meow!</Popup>
             </Marker>))
     }
@@ -83,4 +85,4 @@ const Map = () => {
     );
 };
 
-export default Map;
+export default LeafletMap;
