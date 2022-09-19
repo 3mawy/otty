@@ -14,7 +14,7 @@ const ReactImagePreview = ({imgSrc, cameraToggle, onRetake}) => {
         <div className={`z-50 absolute mx-auto w-full h-full grid bg-black bg-opacity-50`}>
             {viewImgToggle ? (<div className={`z-50 w-full h-full absolute`}>
                 <img className={`bg-red-600 w-auto mx-auto h-full object-cover bg-cover `}
-                     src={imgSrc} onClick={() => setViewImgToggle(!viewImgToggle)}
+                     src={imgSrc}
                 />
                 <button onClick={() => setViewImgToggle(false)}
                         className={`bg-red-400 absolute top-5 right-5 p-2 rounded-full`}>
