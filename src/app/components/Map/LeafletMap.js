@@ -58,7 +58,8 @@ const LeafletMap = ({posts}) => {
     function CatsLocations() {
         const [catsPosts, setCatsPosts] = useState([]);
         useEffect(() => {
-            setCatsPosts(posts.posts)
+            if (posts){setCatsPosts(posts.posts)}
+
         },[])
         return catsPosts.map((post) =>
             (<Marker position={[post.lat, post.long]} icon={myLocation}>
