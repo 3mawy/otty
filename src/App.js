@@ -4,6 +4,7 @@ import {Route, BrowserRouter as Router, Routes} from "react-router-dom";
 import Layout from "./app/components/Layout";
 import Home from "./app/pages/Home";
 import Camera from "./app/pages/Camera";
+import Map from "./app/pages/Map";
 
 function App() {
     return (
@@ -12,6 +13,7 @@ function App() {
                 <Layout>
                     <Routes>
                         <Route path="/otty/" element={<Home/>}/>
+                        <Route exact path={"map"} element={<Map/>}/>
                         <Route exact path={"camera"} element={<Camera/>}/>
                     </Routes>
                 </Layout>
