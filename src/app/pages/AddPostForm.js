@@ -4,9 +4,9 @@ import ReactImagePreview from "../components/Camera/ReactImagePreview";
 
 const AddPostForm = ({children}) => {
     return (
-        <div>
-            <Map className={`z-20`}/>
-            <div className={`bg-red-600 h-screen w-screen z-50`}>
+        <div className={`relative `} >
+            <Map className={`z-20 absolute `}/>
+            <div className={` h-[100%] absolute right-0 top-0 w-screen z-40`}>
                 {children}
             </div>
         </div>
