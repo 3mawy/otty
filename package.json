@@ -4,8 +4,10 @@
   "homepage": "https://3mawy.github.io/otty",
   "private": false,
   "dependencies": {
+    "@headlessui/react": "^1.7.2",
     "@react-google-maps/api": "^2.12.2",
     "@reduxjs/toolkit": "^1.8.5",
+    "@tailwindui/react": "^0.1.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
