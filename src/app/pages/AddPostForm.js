@@ -1,5 +1,5 @@
 import React from 'react';
-import Map from "../components/Map/Map";
+import Map from "./Map";
 import ReactImagePreview from "../components/Camera/ReactImagePreview";
 
 const AddPostForm = ({children}) => {

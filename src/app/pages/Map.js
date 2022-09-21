@@ -30,7 +30,7 @@ const Map = () => {
     return (
         <>
             <ButtonsOverlay/>
-            <div className={`absolute z-30 top-0 left-0 right-0 bottom-0`}>
+            <div className={`relative z-30 top-0 left-0 right-0 bottom-0`}>
                 {content}
             </div>
             <div className={`justify-center flex z-40 fixed space-x-5 bottom-4 w-full `}>

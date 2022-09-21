@@ -1,5 +1,5 @@
 import React, {useCallback, useRef, useState} from 'react';
-import {BiCamera, BiCheck, BiExit} from "react-icons/bi";
+import {BiCamera} from "react-icons/bi";
 import Webcam from "react-webcam";
 import {CgClose} from "react-icons/cg";
 import ReactImagePreview from "./ReactImagePreview";

@@ -62,7 +62,7 @@ const LeafletMap = ({posts}) => {
 
         },[])
         return catsPosts.map((post) =>
-            (<Marker position={[post.lat, post.long]} icon={myLocation}>
+            (<Marker key={post.id} position={[post.lat, post.long]} icon={myLocation}>
                 <Popup>Meow!</Popup>
             </Marker>))
     }
@@ -72,7 +72,7 @@ const LeafletMap = ({posts}) => {
             center={[30.0471, 31.4236]}
             zoom={14}
             scrollWheelZoom
-            style={{height: "100vh"}}
+           className={'h-[94vh]'}
         >
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
