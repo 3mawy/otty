@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+.temporary-bounce {
+  -webkit-animation-iteration-count: 3.5;
+  animation-iteration-count: 3.5;
+}
