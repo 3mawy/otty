@@ -1,0 +1,15 @@
+version: "2.2"
+services:
+  auto_deploy_docker: # name of the service
+    image: 3mawyyy/2otty
+    # the image to use
+    container_name: otty # what to label the container for docker ps
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - 8000:80 # note, we're mapping to port 80 instead of 5000 because we'll use 80 on the VPS
+    restart: unless-stopped # restart if failed, until we stop it ourselves
