@@ -11,5 +11,5 @@ services:
       - '.:/app'
       - '/app/node_modules'
     ports:
-      - 8000:80 # note, we're mapping to port 80 instead of 5000 because we'll use 80 on the VPS
+      - 8001:80 # note, we're mapping to port 80 instead of 5000 because we'll use 80 on the VPS
     restart: unless-stopped # restart if failed, until we stop it ourselves
