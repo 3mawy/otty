@@ -1,6 +1,6 @@
 // Import the RTK Query methods from the React-specific entry point
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
-import {setCredentials, logOut} from "../auth/authSlice";
+// import {setCredentials, logOut} from "../auth/authSlice";
 
 const baseQuery = fetchBaseQuery({
     baseUrl: 'http://localhost:8000/api',
@@ -24,7 +24,7 @@ const baseQueryWithRefreshAuth = async (args, api, extraOptions) => {
         if (refreshResult.data) {
             const email = api.getState().auth.userEmail
             // store the new token
-            api.dispatch(setCredentials({...refreshResult.data, 'email':email} ))
+            // api.dispatch(setCredentials({...refreshResult.data, 'email':email} ))
         }
         result = await baseQuery(args, api, extraOptions)
     }

@@ -44,7 +44,7 @@ const Map = () => {
 
                 </div>
                 <div>
-                    <Link to={'/'}>
+                    <Link to={'/upload'}>
                         <button className={`bg-blue-400 p-2 rounded-full`}>
                             <BiUpload className={`w-9 h-9 mx-auto`}/>
                         </button>

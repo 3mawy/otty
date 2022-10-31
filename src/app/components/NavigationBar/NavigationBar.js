@@ -9,12 +9,12 @@ const NavigationBar = () => {
         <div
             className={`h-[6vh]  min-h-[3rem] grid grid-cols-5 justify-items-stretch bg-gray-100 border-b-black border-opacity-5 border-b-2 z-50 relative`}>
             <div className={`justify-self-start mx-3 text-amber-600`}>
-                <Link to={`/otty`}>
+                <Link to={`/`}>
                     <IoPerson className={`w-auto h-[6vh]  min-h-[3rem] p-2  `}/>
                 </Link>
             </div>
             <div className={`justify-self-center col-start-3 col-end-4   `}>
-                <Link to={`/otty`}>
+                <Link to={`/`}>
 
                 <GiAnimalHide
                     className={`absolute top-0 right-0 left-0 w-auto min-h-[2rem] h-[5vh] mx-auto text-amber-600`}/>

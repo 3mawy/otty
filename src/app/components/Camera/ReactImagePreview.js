@@ -36,11 +36,7 @@ const ReactImagePreview = ({imgSrc, cameraToggle, onRetake}) => {
                         <BiReset className={`w-9 h-9`}/>
                     </button>
                 </div>
-
-
             </form>
-
-
         </div>
     );
 };
