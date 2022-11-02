@@ -1,13 +1,14 @@
 import React, {useState} from 'react';
 import {BiCheck, BiReset, BiWindowClose} from "react-icons/bi";
 import {CgClose} from "react-icons/cg";
+import CircleButton from "../Misc/Buttons/CircleButton";
 
 const ReactImagePreview = ({imgSrc, cameraToggle, onRetake}) => {
     const [extraInfo, setExtraInfo] = useState('')
     const [viewImgToggle, setViewImgToggle] = useState(false)
 
     function confirmImage() {
-
+        console.log('aloooooooooo')
     }
 
     return (
@@ -29,12 +30,8 @@ const ReactImagePreview = ({imgSrc, cameraToggle, onRetake}) => {
                           className={`rounded-lg my-5 max-w-80 w-full p-2  mx-auto appearance-none focus-visible:outline-0`}
                           placeholder={`Extra Info`}/>
                 <div className={`flex space-x-4 justify-center`}>
-                    <button onClick={confirmImage} type="submit" className={`bg-blue-400 p-2 rounded-full`}>
-                        <BiCheck className={`w-9 h-9 `}/>
-                    </button>
-                    <button onClick={onRetake} className={`bg-red-400 p-2 rounded-full`}>
-                        <BiReset className={`w-9 h-9`}/>
-                    </button>
+                    <CircleButton  Icon={BiCheck} onClick={confirmImage}/>
+                    <CircleButton  Icon={BiReset} onClick={onRetake} bg={`bg-red-400`}/>
                 </div>
             </form>
         </div>

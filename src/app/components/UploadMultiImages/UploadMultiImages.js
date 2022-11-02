@@ -53,12 +53,12 @@ const UploadMultiImages = ({onImagesChange, images}) => {
 
                         <div className="upload__image-wrapper">
                             <div
-                                className=" bg-orange-400 text-white cursor-pointer rounded-md text-xl py-2 text-center"
+                                className=" bg-red-500 text-white cursor-pointer rounded-md text-xl py-2 text-center"
                                 {...dragProps}
                                 onClick={onImageUpload}
                                 style={isDragging ? {backgroundColor: "#afafaf", color: "white"} : undefined}
                             >
-                                Choose a file or Drag it here
+                                دوس هنا عشان تضيف 4 صور بكتيرك
                             </div>
 
                             <div className=" grid grid-cols-4 gap-2 pt-4" style={{textAlign: "left"}}>

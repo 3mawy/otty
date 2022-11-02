@@ -22,7 +22,7 @@ const ReactCamera = () => {
 
     return (
 
-        <div>
+        <div className={`h-[100%] absolute right-0 top-0 w-screen z-40`}>
             {imgSrc ? (<AddPostForm><ReactImagePreview imgSrc={imgSrc} onRetake={() => setImgSrc(null)}/></AddPostForm>) : (
                 <div className={`absolute z-40 justify-center flex h-[100%]`}>
                     <Webcam

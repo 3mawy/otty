@@ -1,17 +1,14 @@
 import React from 'react';
-import {GiCat} from "react-icons/gi";
+import {BiCamera, BiUpload} from "react-icons/bi";
+import CircleButton from "./Misc/Buttons/CircleButton";
 
-import {AiOutlineNotification} from "react-icons/ai";
-
-
-const ButtonsOverlay = () => {
-
-
+const ButtonsOverlay = ({lost}) => {
     return (
-        <div>
-            <div className={`absolute z-50 top-5 right-5 `}>
-
-            </div>
+        <div className={`justify-center flex z-40 fixed space-x-5 bottom-4 w-full `}>
+            {!lost &&
+                <CircleButton link={`/map/camera`} text={`Camera`} Icon={BiCamera} bg={`bg-red-400`}/>
+            }
+            <CircleButton link={`/map/upload`} text={`Upload`} Icon={BiUpload}/>
         </div>
     );
 };

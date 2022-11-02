@@ -1,49 +1,41 @@
 import React, {useState} from "react";
-import Map from "./Map";
-import {CgClose} from "react-icons/cg";
-import {BiCheck, BiReset} from "react-icons/bi";
 import UploadMultiImages from "../components/UploadMultiImages/UploadMultiImages";
+import CustomRadioSelect from "../components/Misc/CustomRadioSelect/CustomRadioSelect";
+import {useNavigate} from "react-router-dom";
 
 const UploadForm = () => {
-    // const [selectedImage, setSelectedImage] = useState(null);
+    const navigate = useNavigate();
+
     const [extraInfo, setExtraInfo] = useState('')
     const [images, setImages] = React.useState([]);
+    const [selectedAnimal, setSelectedAnimal] = useState('');
 
-    function confirmImage() {
+    const handleAnimalChange = e => {
+        setSelectedAnimal(e.target.value)
+    };
 
-    }
-
-    function onRetake() {
-
-    }
     function onSubmitUploadForm() {
-    console.log(images)
+        console.log({extraInfo, images, selectedAnimal})
     }
+
     return (
-        <div className={`relative `}>
-            <Map className={`z-20`}/>
-            <div className={` h-[100%] absolute right-0 top-0 w-screen z-40`}>
-                <div className={`z-50 absolute mx-auto w-full h-full grid bg-black bg-opacity-50`}>
-                    <div className={`p-5 mx-auto my-auto w-[22rem]  relative  bg-red-100 rounded-lg`}>
-                        <UploadMultiImages onImagesChange={setImages} images={images}/>
-                        <textarea id="moreInfo" onChange={(e) => setExtraInfo(e.target.value)} rows={8}
-                                  className={`rounded-lg mt-5 mb-4 max-w-80 w-full p-2  mx-auto appearance-none focus-visible:outline-0`}
-                                  placeholder={`Extra Info`}/>
-                        {images.length > 0 && (<>
-                            <div className="flex justify-center text-xl ">
-                                <button onClick={onSubmitUploadForm} className={`bg-red-600 p-2 rounded-md `}>
-                                    ! تـأكيد
-                                </button>
-                                {/*<button onClick={onImageRemoveAll} color="danger">*/}
-                                {/*    Remove All Images*/}
-                                {/*</button>*/}
-                            </div>
-                        </>)}
-
+        <div className={`h-[100%] absolute right-0 flex top-0 w-screen `}>
+            <div className={`p-5 z-50 mx-auto my-auto w-[22rem] bg-orange-100 rounded-lg`}>
+                <UploadMultiImages onImagesChange={setImages} images={images}/>
+                <textarea id="moreInfo" onChange={(e) => setExtraInfo(e.target.value)} rows={8}
+                          className={`rounded-lg mt-5 mb-4 max-w-80 w-full p-2  mx-auto appearance-none focus-visible:outline-0`}
+                          placeholder={`Extra Info`}/>
+                <CustomRadioSelect handleChange={handleAnimalChange} selected={selectedAnimal}/>
+                {images.length > 0 && (<>
+                    <div className="flex justify-center text-xl ">
+                        <button onClick={onSubmitUploadForm}
+                                className={`bg-green-500 text-white p-2.5 rounded-md w-screen`}>
+                            ! تـأكيد
+                        </button>
                     </div>
-                </div>
-
+                </>)}
             </div>
+            <div className={`z-40 absolute top-0 w-full h-full bg-black bg-opacity-50`} onClick={() => navigate(-1)}/>
         </div>
     );
 };
